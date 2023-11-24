@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homedash</title>
+    <!--Material CDN-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+      <meta name=”viewport” content=”width=device-width, initial-scale=1.0">
+    <!--Stylesheet-->
+    <link rel="stylesheet" href = "pendingpayments.css">
+    <!--Script-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script src="pendingpayments.js"></script>
+        <div class="dashPieChart">
+</head>
+<body>
+    <div class = "container">
+        <aside id = "leftAside">
+            <div class = "top">
+                <div class="logo">
+                    <img src="./images/logo.png">
+                    <h2>Home<span class = "logo2ndcolor">Dash</span></h2>
+                </div>
+                <div class = "close" id = "close-btn">
+                    <span class="material-icons">
+                        close
+                        </span>
+                </div>
+            </div>
+
+            <div class = "sidebar">
+                <a href = "index.html">
+                    <span class="material-icons">dashboard</span>
+                    <h3>Dashboard</h3>
+                 </a>
+                 <a href = "#">
+                    <span class="material-icons">house</span>
+                    <h3>Properties</h3>
+                 </a><a href = "#">
+                    <span class="material-icons">people</span>
+                    <h3>Clients</h3>
+                 </a><a href = "#">
+                    <span class="material-icons">analytics</span>
+                    <h3>Analytics</h3>
+                 </a><a href = "#">
+                    <span class="material-icons">chat_bubble</span>
+                    <h3>Messages</h3>
+                    <span class = "message-count">3</span>
+                 </a><a href = "#">
+                    <span class="material-icons">build</span>
+                    <h3>Maintenance</h3>
+                 </a><a href = "pendingpayments.html">
+                    <span class="material-icons">payments</span>
+                    <h3>Pending Payments</h3>
+                 </a><a href = "#">
+                    <span class="material-icons">attach_money</span>
+                    <h3>Investments</h3>
+                 </a><a href = "#">
+                    <span class="material-icons">payment</span>
+                    <h3>Invoices</h3>
+                 </a><a href = "#">
+                    <span class="material-icons">settings</span>
+                    <h3>Settings</h3>
+                 </a>
+            </div>
+        </aside>
+        <!--End of Aside-->
+    <main>
+        <div class="pendingPaymentsContainer">
+            <div class="yourPendingPayments">
+                <table id = "iPPTable">
+                <caption>Incoming Pending Payments</caption>
+                <thead>
+                    <tr>
+                        <th>Client</th>
+                        <th>Payment For</th>
+                        <th>Payment Amount</th>
+                        <th>Due Date</th>
+                        <th>Previous Balance</th>
+                        <th>Info</th>
+                        <th><button id = "addRowButton2" onclick = "openAddRowWindow()"><span class="material-icons">add</span></button></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Trent Parks</td>
+                        <td><button onclick = "openInPayment()">View</a></td>
+                        <td>$2760</td>
+                        <td><input type = "date"></td>
+                        <td class = "bad">$650</td>
+                        <td class = "primary"><button onclick = "openInfoWindow()" id = "infoButton">Info</a></td>
+                        <td><button onclick = "deleteRow(this)" class = "deleteButton" id= "deleteRowButton1"><span class="material-icons">
+                            remove_circle
+                            </span>
+                            </button></td>
+                    </tr>
+                    <tr>
+                        <td>Trent Parks</td>
+                        <td><button onclick = "openInPayment()">View</a></td>
+                        <td>$2760</td>
+                        <td><input type = "date"></td>
+                        <td class = "bad">$650</td>
+                        <td class = "primary"><button onclick = "openInfoWindow()" id = "infoButton">Info</a></td>
+                        <td><button onclick = "deleteRow(this)" class = "deleteButton" id= "deleteRowButton1"><span class="material-icons">
+                            remove_circle
+                            </span>
+                            </button></td>
+                    </tr>
+                    <tr>
+                        <td>Trent Parks</td>
+                        <td><button onclick = "openInPayment()">View</a></td>
+                        <td>$2760</td>
+                        <td><input type = "date"></td>
+                        <td class = "bad">$650</td>
+                        <td class = "primary"><button onclick = "openInfoWindow()" id = "infoButton">Info</a></td>
+                        <td><button onclick = "deleteRow(this)" class = "deleteButton" id= "deleteRowButton1"><span class="material-icons">
+                            remove_circle
+                            </span>
+                            </button></td>
+                    </tr>
+                    <tr>
+                        <td>Trent Parks</td>
+                        <td><button onclick = "openInPayment()">View</a></td>
+                        <td>$2760</td>
+                        <td><input type = "date"></td>
+                        <td class = "bad">$650</td>
+                        <td class = "primary"><button onclick = "openInfoWindow()" id = "infoButton">Info</a></td>
+                        <td><button onclick = "deleteRow(this)" class = "deleteButton" id= "deleteRowButton1"><span class="material-icons">
+                            remove_circle
+                            </span>
+                            </button></td>
+                    </tr>
+                    <tr>
+                        <td>Trent Parks</td>
+                        <td><button onclick = "openInPayment()">View</a></td>
+                        <td>$2760</td>
+                        <td><input type = "date"></td>
+                        <td class = "bad">$650</td>
+                        <td class = "primary"><button onclick = "openInfoWindow()" id = "infoButton">Info</a></td>
+                        <td><button onclick = "deleteRow(this)" class = "deleteButton" id= "deleteRowButton1"><span class="material-icons">
+                            remove_circle
+                            </span>
+                            </button></td>
+                    </tr>
+                    <tr>
+                        <td>Trent Parks</td>
+                        <td><button onclick = "openInPayment()">View</a></td>
+                        <td>$2760</td>
+                        <td><input type = "date"></td>
+                        <td class = "bad">$650</td>
+                        <td class = "primary"><button onclick = "openInfoWindow()" id = "infoButton">Info</a></td>
+                        <td><button onclick = "deleteRow(this)" class = "deleteButton" id= "deleteRowButton1"><span class="material-icons">
+                            remove_circle
+                            </span>
+                            </button></td>
+                    </tr>
+                    <tr>
+                        <td>Trent Parks</td>
+                        <td><button onclick = "openInPayment()">View</a></td>
+                        <td>$2760</td>
+                        <td><input type = "date"></td>
+                        <td class = "bad">$650</td>
+                        <td class = "primary"><button onclick = "openInfoWindow()" id = "infoButton">Info</a></td>
+                        <td><button onclick = "deleteRow(this)" class = "deleteButton" id= "deleteRowButton1"><span class="material-icons">
+                            remove_circle
+                            </span>
+                            </button></td>
+                    </tr>
+                    <tr>
+                        <td>Trent Parks</td>
+                        <td><button onclick = "openInPayment()">View</a></td>
+                        <td>$2760</td>
+                        <td><input type = "date"></td>
+                        <td class = "bad">$650</td>
+                        <td class = "primary"><button onclick = "openInfoWindow()" id = "infoButton">Info</a></td>
+                        <td><button onclick = "deleteRow(this)" class = "deleteButton" id= "deleteRowButton1"><span class="material-icons">
+                            remove_circle
+                            </span>
+                            </button></td>
+                    </tr><tr>
+                        <td>Trent Parks</td>
+                        <td><button onclick = "openInPayment()">View</a></td>
+                        <td>$2760</td>
+                        <td><input type = "date"></td>
+                        <td class = "bad">$650</td>
+                        <td class = "primary"><button onclick = "openInfoWindow()" id = "infoButton">Info</a></td>
+                        <td><button onclick = "deleteRow(this)" class = "deleteButton" id= "deleteRowButton1"><span class="material-icons">
+                            remove_circle
+                            </span>
+                            </button></td>
+                    </tr>
+                    <tr>
+                        <td>Trent Parks</td>
+                        <td><button onclick = "openInPayment()">View</a></td>
+                        <td>$2760</td>
+                        <td><input type = "date"></td>
+                        <td class = "bad">$650</td>
+                        <td class = "primary"><button onclick = "openInfoWindow()" id = "infoButton">Info</a></td>
+                        <td><button onclick = "deleteRow(this)" class = "deleteButton" id= "deleteRowButton1"><span class="material-icons">
+                            remove_circle
+                            </span>
+                            </button></td>
+                    </tr>
+                    <tr>
+                        <td>Trent Parks</td>
+                        <td><button onclick = "openInPayment()">View</a></td>
+                        <td>$2760</td>
+                        <td><input type = "date"></td>
+                        <td class = "bad">$650</td>
+                        <td class = "primary"><button onclick = "openInfoWindow()" id = "infoButton">Info</a></td>
+                        <td><button onclick = "deleteRow(this)" class = "deleteButton" id= "deleteRowButton1"><span class="material-icons">
+                            remove_circle
+                            </span>
+                            </button></td>
+                        </tr>
+                    
+                    
+                   </tbody>
+            </table>
+            </div>
+    <div class="yourPendingPayments">
+        <table id = "outgoingPPTable">
+        <caption>Outgoing Pending Payments</caption>
+        <thead>
+            <tr>
+                <th>Payee</th>
+                <th>Payment For</th>
+                <th>Set Auto Payment Date</th>
+                <th>Due Date</th>
+                <th>Money You Owe</th>
+                <th>Pay</th>
+                <th><button id = "addRowButton2" onclick = "openAddRowWindow2()"><span class="material-icons">add</span></button></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id = "row-1">
+                <td>Trent Parks</td>
+                <td><button onclick = "openOutPayment()">View</a></td>
+                <td><input type = "date"></td>
+                <td><input type = "date"></td>
+                <td class = "bad">$650</td>
+                <td class = "primary"><button onclick = "openPaymentWindow()" id = "payNowButton">PAY NOW</a></td>
+                <td><button onclick = "deleteRow(this)" class = "deleteButton" id= "deleteRowButton1"><span class="material-icons">
+                    remove_circle
+                    </span>
+                    </button></td>
+            </tr>
+            <tr>
+                <td>Trent Parks</td>
+                <td><button onclick = "openOutPayment()">View</a></td>
+                <td><input type = "date"></td>
+                <td><input type = "date"></td>
+                <td class = "bad">$650</td>
+                <td class = "primary"><button onclick = "openPaymentWindow()" id = "payNowButton">PAY NOW</a></td>
+                <td><button onclick = "deleteRow(this)" class = "deleteButton" id= "deleteRowButton2"><span class="material-icons">
+                    remove_circle
+                    </span>
+                    </button></td>
+            </tr>
+            <tr>
+                <td>Trent Parks</td>
+                <td><button onclick = "openOutPayment()">View</a></td>
+                <td><input type = "date"></td>
+                <td><input type = "date"></td>
+                <td class = "bad">$650</td>
+                <td class = "primary"><button onclick = "openPaymentWindow()" id = "payNowButton">PAY NOW</a></td>
+                <td><button onclick = "deleteRow(this)" class = "deleteButton" id= "deleteRowButton3"><span class="material-icons">
+                    remove_circle
+                    </span>
+                    </button></td>
+            </tr>
+            <tr>
+                <td>Trent Parks</td>
+                <td><button onclick = "openOutPayment()">View</a></td>
+                <td><input type = "date"></td>
+                <td><input type = "date"></td>
+                <td class = "bad">$650</td>
+                <td class = "primary"><button onclick = "openPaymentWindow()" id = "payNowButton">PAY NOW</a></td>
+                <td><button onclick = "deleteRow(this)" class = "deleteButton" id= "deleteRowButton4"><span class="material-icons">
+                        remove_circle
+                        </span>
+                        </button></td>
+            </tr>
+            <tr>
+                <td>Trent Parks</td>
+                <td><button onclick = "openOutPayment()">View</a></td>
+                <td><input type = "date"></td>
+                <td><input type = "date"></td>
+                <td class = "bad">$650</td>
+                <td class = "primary"><button onclick = "openPaymentWindow()" id = "payNowButton">PAY NOW</a></td>
+                <td><button onclick = "deleteRow(this)" class = "deleteButton" id= "deleteRowButton5" ><span class="material-icons">
+                        remove_circle
+                        </span>
+                        </button></td>
+            </tr>
+            <tr>
+                <td>Trent Parks</td>
+                <td><button onclick = "openOutPayment()">View</a></td>
+                <td><input type = "date"></td>
+                <td><input type = "date"></td>
+                <td class = "bad">$650</td>
+                <td class = "primary"><button onclick = "openPaymentWindow()" id = "payNowButton">PAY NOW</a></td>
+                <td><button onclick = "deleteRow(this)" class = "deleteButton" id= "deleteRowButton6"><span class="material-icons">
+                        remove_circle
+                        </span>
+                        </button></td>
+            </tr>
+            <tr>
+                <td>Trent Parks</td>
+                <td><button onclick = "openOutPayment()">View</a></td>
+                <td><input type = "date"></td>
+                <td><input type = "date"></td>
+                <td class = "bad">$650</td>
+                <td class = "primary"><button onclick = "openPaymentWindow()" id = "payNowButton">PAY NOW</a></td>
+                <td><button onclick = "deleteRow(this)" class = "deleteButton" id= "deleteRowButton7"><span class="material-icons">
+                        remove_circle
+                        </span>
+                        </button></td>
+            </tr>
+            <tr>
+                <td>Trent Parks</td>
+                <td><button onclick = "openOutPayment()">View</a></td>
+                <td><input type = "date"></td>
+                <td><input type = "date"></td>
+                <td class = "bad">$650</td>
+                <td class = "primary"><button onclick = "openPaymentWindow()" id = "payNowButton">PAY NOW</a></td>
+                <td><button onclick = "deleteRow(this)" class = "deleteButton" id= "deleteRowButton8"><span class="material-icons">
+                        remove_circle
+                        </span>
+                        </button></td>
+            </tr>
+            <tr>
+                <td>Trent Parks</td>
+                <td><button onclick = "openOutPayment()">View</a></td>
+                <td><input type = "date"></td>
+                <td><input type = "date"></td>
+                <td class = "bad">$650</td>
+                <td class = "primary"><button onclick = "openPaymentWindow()" id = "payNowButton">PAY NOW</a></td>
+                <td><button onclick = "deleteRow(this)" class = "deleteButton" id= "deleteRowButton9"><span class="material-icons">
+                        remove_circle
+                        </span>
+                        </button></td>
+            </tr>
+            <tr>
+                <td>Trent Parks</td>
+                <td><button onclick = "openOutPayment()">View</a></td>
+                <td><input type = "date"></td>
+                <td><input type = "date"></td>
+                <td class = "bad">$650</td>
+                <td class = "primary"><button onclick = "openPaymentWindow()" id = "payNowButton">PAY NOW</a></td>
+                <td><button onclick = "deleteRow(this)" class = "deleteButton" id= "deleteRowButton10"><span class="material-icons">
+                        remove_circle
+                        </span>
+                        </button></td>
+            </tr>
+           </tbody>
+    
+    </table>
+    </div>
+          <div id="modalContainer">
+              <div class="modal" id="incomingPPFor">
+                <!-- Modal Content 1 -->
+                <div class="modalContent">
+                <h2>Incoming Pending Payments Info</h2>
+                 <p>
+                 Monthly rent of 176 Belmont Rd.
+                 </p>
+                
+                 <p class = "closeInstructions">
+                    Click anywhere outside the window to close
+                 </p>
+                </div>
+            
+            </div>
+           </div>
+           <div id="modalContainer2">
+            <div class="modal" id="outgoingPPFor">
+              <!-- Modal Content 1 -->
+              <div class="modalContent">
+              <h2>Outgoing Pending Payments Info</h2>
+               <p>
+               Home maintenance on 19 Terrance Ln. Roofing, cleaning, and replacement of water pipes and plumbing fix.
+               </p>
+              
+               <p class = "closeInstructions">
+                  Click anywhere outside the window to close
+               </p>
+              </div>
+          </div>
+         </div>
+
+         <div id="modalContainer3">
+            <div class="modal" id="infoWindow">
+              <!-- Modal Content 1 -->
+              <div class="modalContent">
+              <h2>Info</h2>
+               <p>
+               I need some more time to pay this month's rent due to all of my bank accounts having been shut down due to fraud. It should be up in 2-3 weeks.
+               </p>
+              
+               <p class = "closeInstructions">
+                  Click anywhere outside the window to close
+               </p>
+              </div>
+          </div>
+         </div>
+         <div id="paymentWindowContainer">
+            <div class="modal" id="paymentWindow">
+              <!-- Modal Content 1 -->
+              <div class="modalContent">
+              <h2>Enter Your HomeDash Secure Payments Password</h2>
+               <p>
+                <label for="passwordInput">Enter Password:</label>
+                <input type="password" id="passwordInput" required>
+                <button id = "passwordVisibility" onclick="togglePasswordVisibility()"><span class="material-icons">visibility</span></button>
+                <button id = "submitButton" onclick="submitPassword()">Submit</button>
+                </p>
+                <p id = "passSuccess">
+                #
+               </p>
+              
+               <p class = "closeInstructions">
+                  Click anywhere outside the window to close
+               </p>
+              </div>
+          </div>
+         </div>
+         <div id="addRowContainer">
+            <div class="modal" id="addRowModal"> 
+              <!-- Modal Content 1 -->
+              <div class="modalContent">
+              <h2 id = "addPayment">Add a payment</h2>
+               <p>
+                <form action="/submit" method="post">
+                <label for="input-box">Client Name:</label>
+                <input type="text" class="addIncomingPaymentInput" id="incomingAddClient" name="client-input">
+                <label for="input-box">Payment For:</label>
+                <input type="text" class="addIncomingPaymentInput"id="incomingAddPaymentFor" name="client-paymentFor">
+                <label for="input-box">Payment Amount:</label>
+                <input type="number" class="addIncomingPaymentInput"id="incomingAddPayment" name="client-payment">
+                <label for="input-box">Due Date:</label>
+                <input type="date" class="addIncomingPaymentInput"id="incomingAddDueDate" name="client-dueDate">
+                <label for="input-box">Remaining Balance:</label>
+                <input type="number" class="addIncomingPaymentInput"id="incomingAddRemBal" name="client-remBal">
+            </form>
+            <button id = "addRowSubmit" onclick = "addRow()">Submit</button>
+               </p>
+              </div>
+          </div>
+         </div>
+         </div>
+         <div id="addRowContainer2">
+            <div class="modal" id="addRowModal2"> 
+              <!-- Modal Content 1 -->
+              <div class="modalContent">
+              <h2 id = "addPayment2">Add a payment</h2>
+               <p>
+                <form action="/submit" method="post">
+                <label for="input-box">Client Name:</label>
+                <input type="text" class="addOutgoingPaymentInput"id="incomingAddClient2" name="client-input">
+                <label for="input-box">Payment For:</label>
+                <input type="text" class="addOutgoingPaymentInput"id="incomingAddPaymentFor2" name="client-paymentFor">
+                <label for="input-box">Payment Amount:</label>
+                <input type="number" class="addOutgoingPaymentInput"id="incomingAddPayment2" name="client-payment">
+                <label for="input-box">Due Date:</label>
+                <input type="date" class="addOutgoingPaymentInput"id="incomingAddDueDate2" name="client-dueDate">
+                <label for="input-box">Remaining Balance:</label>
+                <input type="number" class="addOutgoingPaymentInput"id="incomingAddRemBal2" name="client-remBal">
+            </form>
+            <button id = "addRowSubmit2" onclick = "addRow2()">Submit</button>
+               </p>
+              </div>
+          </div>
+         </div>
+         </div>
+         </main>
+         <!--<div class="editPaymentsContainer">
+            <div id = "SHrightAside">
+            
+                </div>
+                <aside id = "rightAside">
+                    <div class = "right">
+                        <table id = "editPaymentsTable">
+                            <caption>Edit Payments</caption>
+                            <thead>
+                                <tr>
+                                    <th>Client</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><button class = editPaymentsButton onclick = "openEditPaymentsWindow()">Trent Parks</button></td>
+                                </tr>
+                                <tr>
+                                    <td><button class = editPaymentsButton onclick = "openEditPaymentsWindow()">Amelia Johnson</button></td>
+                                </tr>
+                                <tr>
+                                    <td><button class = editPaymentsButton onclick = "openEditPaymentsWindow()">Lucas Anderson</button></td>
+                                </tr>
+                                <tr>
+                                    <td><button class = editPaymentsButton onclick = "openEditPaymentsWindow()">Sophia Martinez</button></td>
+                                </tr>
+                                <tr>
+                                    <td><button class = editPaymentsButton onclick = "openEditPaymentsWindow()">Ethan Ramirez</button></td>
+                                </tr>
+                                <tr>
+                                    <td><button class = editPaymentsButton onclick = "openEditPaymentsWindow()">Olivia Roberts</button></td>
+                                </tr>
+                                <tr>
+                                    <td><button class = editPaymentsButton onclick = "openEditPaymentsWindow()">Benjamin Walker</button></td>
+                                </tr>
+                                <tr>
+                                    <td><button class = editPaymentsButton onclick = "openEditPaymentsWindow()">Ava Thompson</button></td>
+                                </tr>
+                                <tr>
+                                    <td><button class = editPaymentsButton onclick = "openEditPaymentsWindow()">Noah Rodriguez</button></td>
+                                </tr>
+                                <tr>
+                                    <td><button class = editPaymentsButton onclick = "openEditPaymentsWindow()">Mia Mitchell</button></td>
+                                </tr>
+                                <tr>
+                                    <td><button class = editPaymentsButton onclick = "openEditPaymentsWindow()">Alexander Scott</button></td>
+                                </tr>
+                                <tr>
+                                    <td><button class = editPaymentsButton onclick = "openEditPaymentsWindow()">Liam Parker</button></td>
+                                </tr>
+                                <tr>
+                                    <td><button class = editPaymentsButton onclick = "openEditPaymentsWindow()">Isabella Foster</button></td>
+                                </tr>
+                                <tr>
+                                    <td><button class = editPaymentsButton onclick = "openEditPaymentsWindow()">Mason Sullivan</button></td>
+                                </tr>
+                            </tbody>
+                      </table>
+                </aside>-->
+                <div id="ePWContainer">
+                    <div class="modal" id="editPaymentsModal"> 
+                      <!-- Modal Content 1 -->
+                      <div class="modalContent">
+                      <h2 id = "editPaymentForWho">Edit Payment</h2>
+                       <p>
+                       
+                       </p>
+                      
+                       
+                      </div>
+                  </div>
+                 </div>
+                
+    
+                
+            </div>
+    </div>
+
+</body>
+
+

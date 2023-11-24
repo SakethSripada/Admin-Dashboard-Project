@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homedash</title>
+    <!--Material CDN-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+      <meta name=”viewport” content=”width=device-width, initial-scale=1.0">
+    <!--Stylesheet-->
+    <link rel="stylesheet" href = "./styles.css">
+    <!--Script-->
+    <script src="script.js"></script>
+        <div class="dashPieChart">
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script type="text/javascript">
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+          ['Home', 'Percentage of Revenue'],
+          ['176 Belmont Rd',  10],
+          ['12 Parkview Rd',    7  ],
+          ['124 Ridge Rd',  13],
+          ['1895 Terrace Dr', 12],
+          ['778 Kingpin Ln',    8]
+            ]);
+
+            var options = {
+          title: 'Percentage of Revenue by Property',
+          'width':570,
+            'height':400,
+            'backgroundColor': 'transparent',
+            'is3D':true
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+    
+
+                chart.draw(data, options);
+                }
+    </script>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+         google.charts.load('current', {'packages':['corechart']});
+         google.charts.setOnLoadCallback(drawChart);
+
+             function drawChart() {
+             var data = google.visualization.arrayToDataTable([
+                ['Month', 'Revenue', 'Expenses'],
+                ['Jan',  1000,      400],
+                ['Feb',  1170,      460],
+                ['March',  660,       1120],
+                ['April',  1030,      540]
+                    ]);
+
+                var options = {
+                     title: 'Revenue and expenses from Properties',
+                     curveType: 'function',
+                     legend: { position: 'bottom' },
+                    'width':370,
+                    'height':350,
+                    'backgroundColor': 'transparent',
+                    
+                    
+                    
+
+                };
+
+    var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+    chart.draw(data, options);
+  }
+    </script>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+
+         function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+              ['Year', 'S', 'E'],
+              ['2013',  1000,      400],
+              ['2014',  1170,      460],
+              ['2015',  660,       1120],
+              ['2016',  1030,      540]
+            ]);
+
+                var options = {
+                 title: 'Overall Performance',
+                 hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+                 vAxis: {minValue: 0},
+                 'width':350,
+                 'height':240,
+                };
+
+    var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+  }
+</script>
+        </div>
+</head>
+<body>
+    <div class = "container">
+        <aside id = "leftAside">
+            <div class = "top">
+                <div class="logo">
+                    <img src="./images/logo.png">
+                    <h2>Home<span class = "logo2ndcolor">Dash</span></h2>
+                </div>
+                <div class = "close" id = "close-btn">
+                    <span class="material-icons">
+                        close
+                        </span>
+                </div>
+            </div>
+
+            <div class = "sidebar">
+                <a href = "index.html">
+                    <span class="material-icons">dashboard</span>
+                    <h3>Dashboard</h3>
+                 </a>
+                 <a href = "#">
+                    <span class="material-icons">house</span>
+                    <h3>Properties</h3>
+                 </a><a href = "#">
+                    <span class="material-icons">people</span>
+                    <h3>Clients</h3>
+                 </a><a href = "#">
+                    <span class="material-icons">analytics</span>
+                    <h3>Analytics</h3>
+                 </a><a href = "#">
+                    <span class="material-icons">chat_bubble</span>
+                    <h3>Messages</h3>
+                    <span class = "message-count">3</span>
+                 </a><a href = "#">
+                    <span class="material-icons">build</span>
+                    <h3>Maintenance</h3>
+                 </a><a href = "pendingpayments.html">
+                    <span class="material-icons">payments</span>
+                    <h3>Pending Payments</h3>
+                 </a><a href = "#">
+                    <span class="material-icons">attach_money</span>
+                    <h3>Investments</h3>
+                 </a><a href = "#">
+                    <span class="material-icons">payment</span>
+                    <h3></h3>
+                 </a>
+                 <a href = "#">
+                    <span class="material-icons">settings</span>
+                    <h3>Settings</h3>
+                 </a>
+            </div>
+        </aside>
+        <!--End of Aside-->
+
+        <!--Dashboard Cards-->
+        <main>
+            <h1 id="dashLabelHome">Welcome, Saketh</h1>
+            <div class = "insights">
+                <!--Gross Revenue Card-->
+                <div class="Gross-Revenue">
+                    <div class="middle">
+                        <div class="left">
+                             <h3>Gross Revenue</h3>
+                             <h1>$12,656</h1>
+                        </div>
+                        <div class="progress">
+                            <div class="upwardTrend">
+                                <p><span class="material-icons">
+                                    arrow_upward
+                                    </span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class = "text-muted"> 15% Increase Since Last Week</small>
+                </div>
+                <!--Expenses-->
+                <div class="Expenses">
+                    <div class="middle">
+                        <div class="left">
+                             <h3>Expenses</h3>
+                             <h1>$6233</h1>
+                        </div>
+                        <div class="progress">
+                            <div class="downwardTrend">
+                                <p><span class="material-icons">
+                                    arrow_downward
+                                    </span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class = "text-muted">15% Increase Since Last Week</small>
+                </div>
+                <!--Profit-->
+                <div class="Profit">
+                    <div class="middle">
+                        <div class="left">
+                             <h3>Profit</h3>
+                             <h1>$6423</h1>
+                        </div>
+                        <div class="progress">
+                            <div class="upwardTrend">
+                                <p><span class="material-icons">
+                                    arrow_upward
+                                    </span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class = "text-muted">15% Increase Since Last Week</small>
+                </div>
+
+                <div class="Profit">
+                    <div class="middle">
+                        <div class="left">
+                             <h3>Profit Margin</h3>
+                             <h1>51%</h1>
+                        </div>
+                        <div class="progress">
+                            <div class="downwardTrend">
+                                <p><span class="material-icons">
+                                    arrow_downward
+                                    </span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class = "text-muted">15% Increase Since Last Week</small>
+                </div>
+
+                <div class="Profit">
+                    <div class="middle">
+                        <div class="left">
+                             <h3>Clients</h3>
+                             <h1>19</h1>
+                        </div>
+                        <div class="progress">
+                            <div class="upwardTrend">
+                                <p><span class="material-icons">
+                                    arrow_upward
+                                    </span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class = "text-muted">15% Increase Since Last Week</small>
+                </div>
+
+                <div class="Profit">
+                    <div class="middle">
+                        <div class="left">
+                             <h3>Urgent Issues</h3>
+                             <h1>3</h1>
+                        </div>
+                        <div class="progress">
+                            <div class="warningSign">
+                                <p><span class="material-icons">
+                                    warning
+                                    </span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recent-payments">
+                <h2>Recent Payments</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Client Name</th>
+                            <th>Address</th>
+                            <th>Payment</th>
+                            <th>Remaining Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tom Hills</td>
+                            <td>176 Belmont Road</td>
+                            <td>$2760</td>
+                            <td class = "bad">$230</td>
+                            <td class = "primary"><a href = "#">Info</a></td>
+                        </tr>
+                        <tr>
+                            <td>Tom Hills</td>
+                            <td>176 Belmont Road</td>
+                            <td>$2760</td>
+                            <td class = "bad">$230</td>
+                            <td class = "primary"><a href = "#">Info</a></td>
+                        </tr>
+                        <tr>
+                            <td>Tom Hills</td>
+                            <td>176 Belmont Road</td>
+                            <td>$2760</td>
+                            <td class = "bad">$230</td>
+                            <td class = "primary"><a href = "#">Info</a></td>
+                        </tr>
+                        <tr>
+                            <td>Tom Hills</td>
+                            <td>176 Belmont Road</td>
+                            <td>$2760</td>
+                            <td class = "bad">$230</td>
+                            <td class = "primary"><a href = "#">Info</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                    <a href = "pendingpayments.html">Show All</a>
+            </div>
+            
+            <div class="pendingtasks">
+                <div class="taskslabel">
+                    <h2>Pending Tasks</h2>
+               </div>
+               <div class="tasklist">
+                    <ol>
+                        <li>Repair water pipe in 176 Belmont Road</li>
+                        <li>Talk to Tom about decreasing rent</li>
+                        <li>Hire inspector for 12 Parkview Rd property</li>
+                        <li>Pay down payment for 1895 Terrace Dr property</li>
+                        <li>Renew lease with Marcus</li>
+                    </ol>
+                </div>
+                <button onclick="openPopup()"><h4>Edit</h4></button>
+                <div id="popup-container">
+                    <div id="popup">
+                      <textarea id="input-text" placeholder="Type something..."></textarea>
+                      <button onclick="closePopup()">Close</button>
+                    </div>
+                  </div>
+            </div>
+            
+            <div class="yourPayments ">
+                <div class="yourPaymentLabel">
+                    <h2>Your Payments</h2>
+               </div>
+               <div class="yourPaymentList">
+                    <ol>
+                        <li><button onclick="">Pay HVAC guy</button> </li>
+                        <li><button onclick="">124 Ridge Rd Monthly Payment</button> </li>
+                        <li><button onclick="">Pay 12 Parkview Rd</button></li>
+                    </ol>
+                </div>
+                <a href = "#"><h4>Edit</h4></a>
+                <a href = "pendingPayments.html?message=openPaymentWindow"><h4>Pay Now</h4></a>
+                
+             </div>
+        </main>
+       <div class="performanceContainer">
+        <div id = "SHrightAside">
+        <button id = "closeRightAside" onclick = 'closeRightAside()'><span class="material-icons">close</span></button>
+        <button id = "openRightAside" onclick = 'openRightAside()'><span class="material-icons">menu_open</span></button>
+        <button id = "openRightAside" onclick = 'darkMode()'><span class="material-icons">dark_mode</span></button>
+        <button id = "openRightAside" onclick = 'lightMode()'><span class="material-icons">light_mode</span></button>
+        <input type="range" id="brightnessSlider" min="0" max="100" value="100">
+        
+            </div>
+            <aside id = "rightAside">
+                <div class = "right">
+                    <h2>Analytics + Performance</h2>
+                        <div id="piechart" style="width: 900px; height: 500px;"></div>
+                </div>
+           
+                <div class="lineChart">
+                    <div id="curve_chart" style="width: 900px; height: 500px"></div>
+                </div>
+
+                <div class="areaChart">
+                    <div id="chart_div" style="width: 100%; height: 500px;"></div>
+                </div>
+            </aside>
+            </div> 
+            
+
+            
+        </div>
+        
+    
+</body>
+</html>
